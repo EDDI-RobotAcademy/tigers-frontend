@@ -17,22 +17,20 @@ export function NewsAnalyzer() {
   } = useAnalyzeNews();
 
   return (
-    <section className="panel">
-      <div className="form-grid">
-        <ArticleForm
-          article={article}
-          onChange={setArticle}
-          onSubmit={handleAnalyze}
-          onFillSample={fillSample}
-          loading={loading}
-          status={status}
-        />
-        <ResultPanel result={result ?? sampleAnalysis} />
-      </div>
-      <p className="footer-note">
-        현재 화면은 프론트엔드 확인을 위한 Mock API 기반입니다. FastAPI
-        실서비스가 준비되면 API 호출 부분만 교체하면 됩니다.
+    <div className="space-y-6">
+      <ArticleForm
+        article={article}
+        onChange={setArticle}
+        onSubmit={handleAnalyze}
+        onFillSample={fillSample}
+        loading={loading}
+        status={status}
+      />
+      <ResultPanel result={result ?? sampleAnalysis} />
+      <p className="text-center text-sm text-muted-foreground">
+        현재 페이지는 Mock API로 동작합니다. FastAPI 실서버가 준비되면 API
+        호출 부분만 교체하면 됩니다.
       </p>
-    </section>
+    </div>
   );
 }

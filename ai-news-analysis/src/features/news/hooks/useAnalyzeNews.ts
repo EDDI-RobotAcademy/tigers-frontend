@@ -41,7 +41,7 @@ export function useAnalyzeNews(
   }, []);
 
   const status = useMemo(() => {
-    if (loading) return "AI가 기사를 분석하고 있어요…";
+    if (loading) return "AI가 기사를 분석하는 중입니다...";
     if (error) return error;
     if (result) return "분석이 완료되었습니다.";
     return "준비 완료";
